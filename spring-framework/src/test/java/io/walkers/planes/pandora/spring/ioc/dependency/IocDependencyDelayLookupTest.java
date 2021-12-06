@@ -1,5 +1,7 @@
-package io.walkers.planes.pandora.spring.ioc;
+package io.walkers.planes.pandora.spring.ioc.dependency;
 
+import io.walkers.planes.pandora.spring.ioc.dependency.bean.User;
+import io.walkers.planes.pandora.spring.ioc.dependency.bean.UserHolder;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.ObjectProvider;
@@ -18,7 +20,7 @@ public class IocDependencyDelayLookupTest {
     public void delayLookupByType() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/ioc/dependency/lookup/IocDependencyDelayLookupByTypeContext.xml");
         User user = applicationContext.getBean(User.class);
-        System.out.println("根据 type 依赖查找 User 类结果：" + user);
+        System.out.println("根据 type 实时依赖查找 User 类结果：" + user);
         Assert.assertEquals("PlanesWalker23-delay-lookup-byType", user.getName());
         Assert.assertEquals(5, user.getId().intValue());
 

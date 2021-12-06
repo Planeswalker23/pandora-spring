@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.ioc;
+package io.walkers.planes.pandora.spring.ioc.dependency.bean;
 
 /**
  * 用户组合类
