@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
  *
  * @author Planeswalker23
  */
-public class AnnotationDrivenIocDependencyDelayLookupByTypeConfig {
+public class AnnotationDrivenIocDependencyLookupDelayByTypeConfig {
 
     @Bean
     public User user() {

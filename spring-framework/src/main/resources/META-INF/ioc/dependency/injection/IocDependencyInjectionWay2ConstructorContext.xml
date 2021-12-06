@@ -3,9 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="io.walkers.planes.pandora.spring.ioc.User">
+    <bean id="user" class="io.walkers.planes.pandora.spring.ioc.dependency.bean.User">
         <constructor-arg name="id" value="9"/>
         <constructor-arg name="name" value="PlanesWalker23-injection-way2-constructor-xml"/>
+    </bean>
+
+    <bean class="io.walkers.planes.pandora.spring.ioc.dependency.injection.IocDependencyInjectionWay2ConstructorHolder">
+        <constructor-arg name="user" ref="user"/>
     </bean>
 
 </beans>

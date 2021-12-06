@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="user" class="io.walkers.planes.pandora.spring.ioc.dependency.bean.User">
-        <property name="id" value="3"/>
-        <property name="name" value="PlanesWalker23-injection"/>
+        <constructor-arg name="id" value="11"/>
+        <constructor-arg name="name" value="PlanesWalker23-injection-way3-field-xml"/>
     </bean>
 
-    <bean id="userHolder" class="io.walkers.planes.pandora.spring.ioc.dependency.bean.UserHolder">
+    <bean class="io.walkers.planes.pandora.spring.ioc.dependency.injection.IocDependencyInjectionWay3FieldHolder">
         <property name="user" ref="user"/>
     </bean>
 

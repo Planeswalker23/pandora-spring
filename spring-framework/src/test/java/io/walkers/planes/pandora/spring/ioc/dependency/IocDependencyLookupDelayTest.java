@@ -2,7 +2,7 @@ package io.walkers.planes.pandora.spring.ioc.dependency;
 
 import io.walkers.planes.pandora.spring.ioc.dependency.bean.User;
 import io.walkers.planes.pandora.spring.ioc.dependency.bean.UserHolder;
-import io.walkers.planes.pandora.spring.ioc.dependency.lookup.AnnotationDrivenIocDependencyDelayLookupByTypeConfig;
+import io.walkers.planes.pandora.spring.ioc.dependency.lookup.AnnotationDrivenIocDependencyLookupDelayByTypeConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.ObjectProvider;
@@ -16,11 +16,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author Planeswalker23
  */
-public class IocDependencyDelayLookupTest {
+public class IocDependencyLookupDelayTest {
 
     @Test
     public void delayLookupByType() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/ioc/dependency/lookup/IocDependencyDelayLookupByTypeContext.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/ioc/dependency/lookup/IocDependencyLookupDelayByTypeContext.xml");
         User user = applicationContext.getBean(User.class);
         System.out.println("根据 type 实时依赖查找 User 类结果：" + user);
         Assert.assertEquals("PlanesWalker23-delay-lookup-byType", user.getName());
@@ -36,7 +36,7 @@ public class IocDependencyDelayLookupTest {
 
     @Test
     public void delayLookupByTypeByAnnotation() {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationDrivenIocDependencyDelayLookupByTypeConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationDrivenIocDependencyLookupDelayByTypeConfig.class);
         ObjectProvider<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
         Assert.assertNotNull(userObjectProvider.getObject());
     }
