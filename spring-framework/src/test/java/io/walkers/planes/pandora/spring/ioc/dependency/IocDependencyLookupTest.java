@@ -59,7 +59,7 @@ public class IocDependencyLookupTest {
 
     @Test
     public void lookupByAnnotationByXmlConfig() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/ioc/dependency/lookup/IocDependencyLookupByTypeContext.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/ioc/dependency/lookup/IocDependencyLookupByAnnotationContext.xml");
         Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(Person.class);
         beansWithAnnotation.forEach((name, obj) -> {
             if ("userWithAnnotation".equals(name)) {

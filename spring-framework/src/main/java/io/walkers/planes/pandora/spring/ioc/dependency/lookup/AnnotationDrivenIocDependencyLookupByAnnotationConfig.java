@@ -1,7 +1,7 @@
 package io.walkers.planes.pandora.spring.ioc.dependency.lookup;
 
 import io.walkers.planes.pandora.spring.ioc.dependency.annotation.Person;
-import io.walkers.planes.pandora.spring.ioc.dependency.bean.User;
+import io.walkers.planes.pandora.spring.ioc.dependency.bean.UserWithAnnotation;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Bean;
  */
 public class AnnotationDrivenIocDependencyLookupByAnnotationConfig {
 
-    @Bean
+    @Bean("userWithAnnotation")
     @Person
-    public User user() {
-        User user = new User();
+    public UserWithAnnotation userWithAnnotation() {
+        UserWithAnnotation user = new UserWithAnnotation();
         user.setId(4);
         user.setName("PlanesWalker23-lookup-byAnnotation");
         return user;

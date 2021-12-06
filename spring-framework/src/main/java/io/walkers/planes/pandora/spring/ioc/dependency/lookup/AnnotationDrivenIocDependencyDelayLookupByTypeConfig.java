@@ -1,6 +1,5 @@
 package io.walkers.planes.pandora.spring.ioc.dependency.lookup;
 
-import io.walkers.planes.pandora.spring.ioc.dependency.annotation.Person;
 import io.walkers.planes.pandora.spring.ioc.dependency.bean.User;
 import org.springframework.context.annotation.Bean;
 

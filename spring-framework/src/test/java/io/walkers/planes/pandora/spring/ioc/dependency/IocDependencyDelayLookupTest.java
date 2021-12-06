@@ -2,10 +2,12 @@ package io.walkers.planes.pandora.spring.ioc.dependency;
 
 import io.walkers.planes.pandora.spring.ioc.dependency.bean.User;
 import io.walkers.planes.pandora.spring.ioc.dependency.bean.UserHolder;
+import io.walkers.planes.pandora.spring.ioc.dependency.lookup.AnnotationDrivenIocDependencyDelayLookupByTypeConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -29,8 +31,13 @@ public class IocDependencyDelayLookupTest {
         Assert.assertNull(userHolderObjectProvider.getIfAvailable());
 
         System.out.println("根据 type 延迟依赖查找 UserHolder 类结果 + Supplier 兜底：" + userHolderObjectProvider.getIfAvailable(UserHolder::new));
-        ObjectProvider<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
         userHolderObjectProvider.ifAvailable(System.out::println);
+    }
+
+    @Test
+    public void delayLookupByTypeByAnnotation() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationDrivenIocDependencyDelayLookupByTypeConfig.class);
+        ObjectProvider<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
         Assert.assertNotNull(userObjectProvider.getObject());
     }
 }
