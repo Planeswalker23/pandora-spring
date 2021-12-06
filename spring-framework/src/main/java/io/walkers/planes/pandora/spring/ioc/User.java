@@ -33,4 +33,12 @@ public class User {
                 ", id=" + id +
                 '}';
     }
+
+    public User() {
+    }
+
+    public User(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
