@@ -1,8 +1,6 @@
 package io.walkers.planes.pandora.spring.component.scan.config;
 
 import io.walkers.planes.pandora.spring.component.scan.animal.land.Dog;
-import io.walkers.planes.pandora.spring.component.scan.annotation.Land;
-import io.walkers.planes.pandora.spring.component.scan.annotation.Sky;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
