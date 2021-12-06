@@ -15,7 +15,7 @@ import java.util.List;
  * @author Planeswalker23
  * @date 2021/12/6
  */
-public class TestComponentScanDemo {
+public class ComponentScanTest {
 
     @Test
     public void valueSingleConfig() {

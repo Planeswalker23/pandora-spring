@@ -8,9 +8,9 @@ import org.springframework.core.env.PropertySource;
 /**
  * {@link PropertySource} 示例
  *
- * @author 范逸东(东稚)
+ * @author Planeswalker23
  */
-public class TestPropertiesSourceByXmlDemo {
+public class PropertiesSourceByXmlTest {
 
     @Test
     public void showUserPropertiesByXml() {

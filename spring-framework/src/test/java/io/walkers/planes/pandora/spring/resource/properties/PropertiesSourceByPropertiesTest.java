@@ -1,7 +1,5 @@
 package io.walkers.planes.pandora.spring.resource.properties;
 
-import io.walkers.planes.pandora.spring.resource.properties.UserProperties;
-import io.walkers.planes.pandora.spring.resource.properties.UserPropertiesConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -10,9 +8,9 @@ import org.springframework.core.env.PropertySource;
 /**
  * {@link PropertySource} 示例
  *
- * @author 范逸东(东稚)
+ * @author Planeswalker23
  */
-public class TestPropertiesSourceByPropertiesDemo {
+public class PropertiesSourceByPropertiesTest {
 
     @Test
     public void showUserPropertiesByProperties() {

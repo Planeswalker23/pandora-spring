@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * 用户配置类
  *
- * @author 范逸东(东稚)
+ * @author Planeswalker23
  */
 @Component
 public class UserXml {
