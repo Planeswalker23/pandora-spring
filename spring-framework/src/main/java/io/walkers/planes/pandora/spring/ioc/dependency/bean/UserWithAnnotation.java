@@ -1,11 +1,14 @@
-package io.walkers.planes.pandora.spring.ioc;
+package io.walkers.planes.pandora.spring.ioc.dependency.bean;
+
+import io.walkers.planes.pandora.spring.ioc.dependency.annotation.Person;
 
 /**
  * 用户类
  *
  * @author Planeswalker23
  */
-public class User {
+@Person
+public class UserWithAnnotation {
 
     private Integer id;
     private String name;
@@ -28,17 +31,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Person{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 '}';
-    }
-
-    public User() {
-    }
-
-    public User(Integer id, String name) {
-        this.id = id;
-        this.name = name;
     }
 }
