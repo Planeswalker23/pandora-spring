@@ -13,8 +13,8 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class ExistDependencyBeanCondition implements Condition {
     @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-        boolean containsBean = context.getBeanFactory().containsBeanDefinition(DependencyBean.class.getName());
+        boolean containsBean = context.getBeanFactory().containsBean("dependencyBean");
         System.out.println("Context contains DependencyBean = " + containsBean);
-        return !containsBean;
+        return containsBean;
     }
 }
