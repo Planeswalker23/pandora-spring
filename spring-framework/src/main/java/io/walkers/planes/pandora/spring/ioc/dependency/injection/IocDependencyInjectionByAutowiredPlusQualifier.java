@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * 自动注入：基于 {@link Autowired} + {@link Qualifier} 注解进行限定注入(分组注入)
+ * <p>
  * 匹配原理：先匹配类型，若存在多个相同类型的 Bean，再根据名称匹配，
  * 若有 {@link Primary} 注解标注的同类型 Bean，返回该 Bean
  * 若存在一个名称匹配成功，直接返回
