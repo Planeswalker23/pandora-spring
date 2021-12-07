@@ -10,7 +10,7 @@ import javax.inject.Inject;
 /**
  * IOC 依赖注入自动注入：基于 {@link Inject} 注解实现注入的逻辑
  *
- * @author PlaINjeker23
+ * @author Planeswalker23
  */
 public class IocDependencyInjectionByInjectTest {
 
