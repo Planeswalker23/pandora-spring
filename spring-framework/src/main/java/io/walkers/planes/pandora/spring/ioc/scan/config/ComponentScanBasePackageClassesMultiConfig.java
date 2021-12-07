@@ -1,7 +1,7 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
-import io.walkers.planes.pandora.spring.component.scan.animal.land.Dog;
-import io.walkers.planes.pandora.spring.component.scan.animal.water.Fish;
+import io.walkers.planes.pandora.spring.ioc.scan.animal.land.Dog;
+import io.walkers.planes.pandora.spring.ioc.scan.animal.water.Fish;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 

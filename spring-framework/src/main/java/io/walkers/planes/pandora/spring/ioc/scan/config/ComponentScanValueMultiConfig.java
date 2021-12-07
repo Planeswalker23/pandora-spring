@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,8 +17,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(
         basePackages = {
-                "io.walkers.planes.pandora.spring.component.scan.animal.land",
-                "io.walkers.planes.pandora.spring.component.scan.animal.sky"
+                "io.walkers.planes.pandora.spring.ioc.scan.animal.land",
+                "io.walkers.planes.pandora.spring.ioc.scan.animal.sky"
         }
 )
 public class ComponentScanValueMultiConfig {

@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +13,9 @@ import org.springframework.context.annotation.FilterType;
  */
 @Configuration
 @ComponentScan(
-        value = {"io.walkers.planes.pandora.spring.component.scan.animal"},
+        value = {"io.walkers.planes.pandora.spring.ioc.scan.animal"},
         includeFilters = {
-                @ComponentScan.Filter(type = FilterType.REGEX, pattern = "io.walkers.planes.pandora.spring.component.scan.animal.+Frog.+")
+                @ComponentScan.Filter(type = FilterType.REGEX, pattern = "io.walkers.planes.pandora.spring.ioc.scan.animal.+Frog.+")
         }
 )
 public class ComponentScanIncludeFilterByRegexConfig {

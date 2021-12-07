@@ -1,7 +1,7 @@
-package io.walkers.planes.pandora.spring.component.scan.filter;
+package io.walkers.planes.pandora.spring.ioc.scan.filter;
 
-import io.walkers.planes.pandora.spring.component.scan.annotation.Land;
-import io.walkers.planes.pandora.spring.component.scan.annotation.Water;
+import io.walkers.planes.pandora.spring.ioc.scan.annotation.Land;
+import io.walkers.planes.pandora.spring.ioc.scan.annotation.Water;
 import org.springframework.core.annotation.MergedAnnotations;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.classreading.MetadataReader;

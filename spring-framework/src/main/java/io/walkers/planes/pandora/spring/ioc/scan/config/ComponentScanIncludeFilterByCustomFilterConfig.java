@@ -1,6 +1,6 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
-import io.walkers.planes.pandora.spring.component.scan.filter.CustomScanIncludeLandAndWaterFilter;
+import io.walkers.planes.pandora.spring.ioc.scan.filter.CustomScanIncludeLandAndWaterFilter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.FilterType;
  */
 @Configuration
 @ComponentScan(
-        value = {"io.walkers.planes.pandora.spring.component.scan.animal"},
+        value = {"io.walkers.planes.pandora.spring.ioc.scan.animal"},
         useDefaultFilters = false,
         includeFilters = {
                 @ComponentScan.Filter(type = FilterType.CUSTOM, value = CustomScanIncludeLandAndWaterFilter.class)

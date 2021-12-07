@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2021/12/6
  */
 @Configuration
-@ComponentScan(value = {"io.walkers.planes.pandora.spring.component.scan.animal.land"})
+@ComponentScan(value = {"io.walkers.planes.pandora.spring.ioc.scan.animal.land"})
 public class ComponentScanValueSingleConfig {
 }

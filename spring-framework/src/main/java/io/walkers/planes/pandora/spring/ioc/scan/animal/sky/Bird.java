@@ -1,6 +1,6 @@
-package io.walkers.planes.pandora.spring.component.scan.animal.sky;
+package io.walkers.planes.pandora.spring.ioc.scan.animal.sky;
 
-import io.walkers.planes.pandora.spring.component.scan.annotation.Sky;
+import io.walkers.planes.pandora.spring.ioc.scan.annotation.Sky;
 import org.springframework.stereotype.Component;
 
 /**

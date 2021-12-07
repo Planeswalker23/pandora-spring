@@ -1,6 +1,6 @@
-package io.walkers.planes.pandora.spring.component.scan.config;
+package io.walkers.planes.pandora.spring.ioc.scan.config;
 
-import io.walkers.planes.pandora.spring.component.scan.animal.land.Dog;
+import io.walkers.planes.pandora.spring.ioc.scan.animal.land.Dog;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.FilterType;
  */
 @Configuration
 @ComponentScan(
-        value = {"io.walkers.planes.pandora.spring.component.scan.animal"},
+        value = {"io.walkers.planes.pandora.spring.ioc.scan.animal"},
         excludeFilters = {
                 @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = Dog.class)
         }

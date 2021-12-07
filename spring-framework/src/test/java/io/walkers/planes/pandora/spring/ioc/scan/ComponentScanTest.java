@@ -1,6 +1,6 @@
-package io.walkers.planes.pandora.spring.component.scan;
+package io.walkers.planes.pandora.spring.ioc.scan;
 
-import io.walkers.planes.pandora.spring.component.scan.config.*;
+import io.walkers.planes.pandora.spring.ioc.scan.config.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
