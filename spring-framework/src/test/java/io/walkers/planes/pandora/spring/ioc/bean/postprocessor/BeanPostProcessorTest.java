@@ -63,4 +63,18 @@ public class BeanPostProcessorTest {
 
         applicationContext.close();
     }
+
+    @Test
+    public void beanFactoryPostProcessor() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(UserBeanFactoryPostProcessor.class);
+        applicationContext.register(User.class);
+        applicationContext.refresh();
+
+        User user1 = applicationContext.getBean(User.class);
+        User user2 = applicationContext.getBean(User.class);
+        Assert.assertNotEquals(user1, user2);
+
+        applicationContext.close();
+    }
 }
