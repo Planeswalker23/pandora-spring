@@ -25,4 +25,42 @@ public class BeanPostProcessorTest {
         Assert.assertEquals("UserFactoryBean", user.getName());
         applicationContext.close();
     }
+
+    @Test
+    public void postProcessBeforeInstantiation() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(UserBeforeInstantiationAwareBeanPostProcessor.class);
+        applicationContext.register(User.class);
+        applicationContext.refresh();
+
+        User user = applicationContext.getBean(User.class);
+
+        Assert.assertEquals("postProcessBeforeInstantiation", user.getName());
+        applicationContext.close();
+    }
+
+    @Test
+    public void postProcessAfterInstantiationTrue() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(UserAfterInstantiationAwareBeanPostProcessor.class);
+        applicationContext.register(User.class);
+        applicationContext.refresh();
+
+        User user = applicationContext.getBean(User.class);
+
+        Assert.assertEquals("postProcessProperties", user.getName());
+        applicationContext.close();
+    }
+
+    @Test
+    public void postProcessAfterInstantiationFalse() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(UserAfterInstantiationAwareBeanPostProcessor.class);
+        applicationContext.register(UserFactoryBean.class);
+        applicationContext.refresh();
+
+        applicationContext.getBean(UserFactoryBean.class);
+
+        applicationContext.close();
+    }
 }
