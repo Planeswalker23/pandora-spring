@@ -3,6 +3,7 @@ package io.walkers.planes.pandora.spring.ioc.bean.postprocessor;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -74,6 +75,31 @@ public class BeanPostProcessorTest {
         User user1 = applicationContext.getBean(User.class);
         User user2 = applicationContext.getBean(User.class);
         Assert.assertNotEquals(user1, user2);
+
+        applicationContext.close();
+    }
+
+    @Test(expected = NoSuchBeanDefinitionException.class)
+    public void beanDefinitionRegistryPostProcessorNotRegister() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(User.class);
+        applicationContext.refresh();
+
+        UserFactoryBean userFactoryBean = applicationContext.getBean(UserFactoryBean.class);
+        Assert.assertNotNull(userFactoryBean);
+
+        applicationContext.close();
+    }
+
+    @Test
+    public void beanDefinitionRegistryPostProcessorRegisted() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(UserFactoryBeanBeanDefinitionRegistryPostProcessor.class);
+        applicationContext.register(User.class);
+        applicationContext.refresh();
+
+        UserFactoryBean userFactoryBean = applicationContext.getBean(UserFactoryBean.class);
+        Assert.assertNotNull(userFactoryBean);
 
         applicationContext.close();
     }
