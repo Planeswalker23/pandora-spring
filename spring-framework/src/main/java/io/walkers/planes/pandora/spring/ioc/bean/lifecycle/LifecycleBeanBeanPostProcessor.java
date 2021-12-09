@@ -1,7 +1,7 @@
 package io.walkers.planes.pandora.spring.ioc.bean.lifecycle;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Spring Bean 初始化后置处理器
@@ -9,11 +9,8 @@ import org.springframework.beans.factory.config.InstantiationAwareBeanPostProces
  * @author planeswalker23
  * @date 2021/11/22
  */
-public class LifecycleBeanInitializationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+public class LifecycleBeanBeanPostProcessor implements BeanPostProcessor {
 
-    /**
-     * 初始化前置处理
-     */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
@@ -22,7 +19,7 @@ public class LifecycleBeanInitializationAwareBeanPostProcessor implements Instan
         }
         // 可返回新的对象
 //        return new LifecycleBean();
-        return InstantiationAwareBeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
+        return BeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
     }
 
     /**
@@ -36,6 +33,6 @@ public class LifecycleBeanInitializationAwareBeanPostProcessor implements Instan
         }
         // 可返回新的对象
 //        return new LifecycleBean();
-        return InstantiationAwareBeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
+        return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
     }
 }

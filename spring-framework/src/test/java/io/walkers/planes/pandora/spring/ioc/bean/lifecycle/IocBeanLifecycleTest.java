@@ -17,7 +17,7 @@ public class IocBeanLifecycleTest {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
         // 注册 BeanPostProcessor
-        applicationContext.getBeanFactory().addBeanPostProcessor(new LifecycleBeanInitializationAwareBeanPostProcessor());
+        applicationContext.getBeanFactory().addBeanPostProcessor(new LifecycleBeanBeanPostProcessor());
         applicationContext.getBeanFactory().addBeanPostProcessor(new LifecycleBeanInstantiationAwareBeanPostProcessor());
         applicationContext.getBeanFactory().addBeanPostProcessor(new LifecycleBeanDestructionAwareBeanPostProcessor());
 
