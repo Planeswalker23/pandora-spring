@@ -1,12 +1,13 @@
 ## pandora-spring
-- [x] Spring5 手撕源码拳拳到肉(尚硅谷)[20211101-20211107]
-- [x] Spring 源码(图灵周瑜)[20211108-20211115]
-- [x] 小马哥讲 Spring 核心编程思想(极客时间)[20211115-20211202]
-- [ ] 从 0 开始深入学习 Spring(掘金小册)[20211116-]
-- [ ] Spring 源码深度解析(第二版-郝佳)
-- [ ] 小马哥讲 Spring AOP编程思想(极客时间)
-
-## point
 - Spring IOC
+  - Dependency Lookup 依赖查找
+  - Dependency Injection 依赖注入
+  - Spring Bean 作用域
+  - Spring Bean 生命周期
+  - Spring BeanDefinition
+  - PostProcessor 后置处理器
+  - 基于 Condition 的条件装配
+  - @ComponentScan 组件扫描
+  - Resource 资源(properties/xml)
 - Spring AOP
 - Spring Bean 生命周期
