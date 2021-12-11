@@ -1,13 +1,12 @@
 ## pandora-spring
-- Spring IOC
-  - Dependency Lookup 依赖查找
-  - Dependency Injection 依赖注入
-  - Spring Bean 作用域
-  - Spring Bean 生命周期
-  - Spring BeanDefinition
-  - PostProcessor 后置处理器
-  - 基于 Condition 的条件装配
-  - @ComponentScan 组件扫描
-  - Resource 资源(properties/xml)
-- Spring AOP
-- Spring Bean 生命周期
+- [ ] Spring IOC
+  - [x] Dependency Lookup 依赖查找
+  - [x] Dependency Injection 依赖注入
+  - [x] Spring Bean 作用域
+  - [x] Spring Bean 生命周期
+  - [x] Spring BeanDefinition
+  - [x] PostProcessor 后置处理器
+  - [x] 基于 Condition 的条件装配
+  - [x] @ComponentScan 组件扫描
+  - [x] Resource 资源(properties/xml)
+- [ ] Spring AOP
