@@ -9,4 +9,6 @@
   - [x] 基于 Condition 的条件装配
   - [x] @ComponentScan 组件扫描
   - [x] Resource 资源(properties/xml)
+  - [ ] 自动装配(@Enable + @Condition + Spring SPI)
+  - [x] Spring 事件
 - [ ] Spring AOP
