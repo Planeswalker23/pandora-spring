@@ -18,7 +18,7 @@ public class LifecycleBean implements InitializingBean, SmartInitializingSinglet
     private String name;
 
     public LifecycleBean() {
-        System.out.println("LifecycleBean 对象正在基于无参构造器实例化");
+        System.out.println("LifecycleBean 对象正在基于【无参构造器】实例化");
     }
 
     public void setName(String name) {
@@ -48,7 +48,7 @@ public class LifecycleBean implements InitializingBean, SmartInitializingSinglet
 
     @Override
     public void afterSingletonsInstantiated() {
-        System.out.println("LifecycleBean 对象初始化完成阶段");
+        System.out.println("LifecycleBean 对象初始化完成阶段 【SmartInitializingSingleton#afterSingletonsInstantiated】");
     }
 
     @PreDestroy

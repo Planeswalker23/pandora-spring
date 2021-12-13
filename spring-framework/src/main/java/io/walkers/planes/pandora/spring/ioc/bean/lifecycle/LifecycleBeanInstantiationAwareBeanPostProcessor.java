@@ -21,7 +21,7 @@ public class LifecycleBeanInstantiationAwareBeanPostProcessor implements Instant
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(beanClass)) {
-            System.out.println("LifecycleBean 对象实例化前置处理");
+            System.out.println("LifecycleBean 对象实例化前置处理 【InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation】");
             // 若返回不为 null，则此对象为最终返回的对象，也就是实例化了一个与配置文件中不同的新的对象
 //            return new LifecycleBean("实例化前置处理生成的对象");
         }
@@ -36,7 +36,7 @@ public class LifecycleBeanInstantiationAwareBeanPostProcessor implements Instant
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
-            System.out.println("LifecycleBean 对象实例化后置处理");
+            System.out.println("LifecycleBean 对象实例化后置处理 【InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation】");
             // 若返回为 false，则会忽略原始 Bean 定义时赋予对象的属性值，并使用当前方法中的赋值
 //            ((LifecycleBean) bean).setName("实例化后置处理");
 //            return false;
@@ -50,7 +50,7 @@ public class LifecycleBeanInstantiationAwareBeanPostProcessor implements Instant
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
-            System.out.println("LifecycleBean 对象赋值前置处理开始-----");
+            System.out.println("LifecycleBean 对象赋值前置处理开始-----【InstantiationAwareBeanPostProcessor#postProcessProperties】");
             // 原始值
             pvs.stream().forEach(propertyValue -> System.out.println("PropertyValue 对象 key=" + propertyValue.getName() + ", value=" + propertyValue.getValue()));
 
@@ -62,7 +62,7 @@ public class LifecycleBeanInstantiationAwareBeanPostProcessor implements Instant
             // 若返回此 PropertyValues 对象，赋值将使用此对象中的内容
             MutablePropertyValues mutablePropertyValues = new MutablePropertyValues();
             mutablePropertyValues.add("name", "对象赋值前置处理v2");
-            System.out.println("LifecycleBean 对象赋值前置处理结束-----");
+            System.out.println("LifecycleBean 对象赋值前置处理结束-----【InstantiationAwareBeanPostProcessor#postProcessProperties】");
 //            return mutablePropertyValues;
         }
         return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);

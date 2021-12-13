@@ -14,7 +14,7 @@ public class LifecycleBeanBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
-            System.out.println("LifecycleBean 对象初始化前置处理");
+            System.out.println("LifecycleBean 对象初始化前置处理 【BeanPostProcessor#postProcessBeforeInitialization】");
             ((LifecycleBean) bean).setName("初始化前置处理");
         }
         // 可返回新的对象
@@ -28,7 +28,7 @@ public class LifecycleBeanBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
-            System.out.println("LifecycleBean 对象初始化后置处理");
+            System.out.println("LifecycleBean 对象初始化后置处理 【BeanPostProcessor#postProcessAfterInitialization】");
             ((LifecycleBean) bean).setName("初始化后置处理");
         }
         // 可返回新的对象

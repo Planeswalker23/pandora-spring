@@ -13,7 +13,7 @@ public class LifecycleBeanDestructionAwareBeanPostProcessor implements Destructi
     @Override
     public void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException {
         if (LifecycleBean.class.isAssignableFrom(bean.getClass())) {
-            System.out.println("LifecycleBean 对象销毁前置阶段");
+            System.out.println("LifecycleBean 对象销毁前置阶段【DestructionAwareBeanPostProcessor#postProcessBeforeDestruction】");
         }
     }
 }
