@@ -15,18 +15,9 @@ public class AopImpl {
     @Test
     public void byXml() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/aop/impl/aop-impl.xml");
-        TwoService twoService = applicationContext.getBean(TwoService.class);
+        AddService addService = applicationContext.getBean(AddService.class);
         int source = 1;
-        int result = twoService.doAdd(source);
-        Assert.assertEquals(1 + 2, result);
-    }
-
-    @Test
-    public void afterReturning() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/aop/impl/aop-impl.xml");
-        OneService oneService = applicationContext.getBean(OneService.class);
-        int source = 1;
-        int result = oneService.doAdd(source);
+        int result = addService.plusOne(source);
         Assert.assertEquals(1 + 1, result);
     }
 }

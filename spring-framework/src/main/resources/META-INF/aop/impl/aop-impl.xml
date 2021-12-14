@@ -5,9 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userService" class="io.walkers.planes.pandora.spring.aop.impl.OneServiceImpl"/>
-
-    <bean id="twoService" class="io.walkers.planes.pandora.spring.aop.impl.TwoService"/>
+    <bean id="addService" class="io.walkers.planes.pandora.spring.aop.impl.AddService"/>
 
     <bean id="logger" class="io.walkers.planes.pandora.spring.aop.impl.Logger"/>
 
@@ -15,11 +13,9 @@
     <aop:config>
         <aop:aspect id="logger" ref="logger">
             <aop:before method="before"
-                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.TwoService.doAdd(int))"/>
+                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.AddService.plusOne(int))"/>
             <aop:after method="after"
-                       pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.TwoService.*(int)))"/>
-            <aop:after-returning method="afterReturning"
-                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.*.*(..)))"/>
+                       pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.AddService.*(int)))"/>
         </aop:aspect>
     </aop:config>
 
