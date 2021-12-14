@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="io.walkers.planes.pandora.spring.aop.impl.OneServiceImpl"/>
+
+    <bean id="twoService" class="io.walkers.planes.pandora.spring.aop.impl.TwoService"/>
+
+    <bean id="logger" class="io.walkers.planes.pandora.spring.aop.impl.Logger"/>
+
+    <!-- 配置 AOP 类 -->
+    <aop:config>
+        <aop:aspect id="logger" ref="logger">
+            <aop:before method="before"
+                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.TwoService.doAdd(int))"/>
+            <aop:after method="after"
+                       pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.TwoService.*(int)))"/>
+            <aop:after-returning method="afterReturning"
+                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.*.*(..)))"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
