@@ -14,6 +14,7 @@ public class AutowiredOrdinaryBeanPostProcessorTest {
     @Test
     public void custom() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.getBeanFactory().addBeanPostProcessor(new AutowiredOrdinaryBeanPostProcessor());
         applicationContext.register(AutowiredOrdinaryBeanPostProcessor.class);
         applicationContext.register(User.class);
         applicationContext.refresh();

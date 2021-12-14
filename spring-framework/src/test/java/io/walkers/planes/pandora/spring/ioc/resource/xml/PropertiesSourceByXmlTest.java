@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.resource.xml;
+package io.walkers.planes.pandora.spring.ioc.resource.xml;
 
 import org.junit.Assert;
 import org.junit.Test;

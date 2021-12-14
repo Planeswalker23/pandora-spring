@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.resource.xml;
+package io.walkers.planes.pandora.spring.ioc.resource.xml;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,6 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @ComponentScan(basePackageClasses = UserXml.class)
-@PropertySource("META-INF/resource/user.xml")
+@PropertySource("META-INF/ioc/resource/user.xml")
 public class UserXmlConfig {
 }

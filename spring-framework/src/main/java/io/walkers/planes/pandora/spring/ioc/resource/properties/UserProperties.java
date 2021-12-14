@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.resource.properties;
+package io.walkers.planes.pandora.spring.ioc.resource.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
