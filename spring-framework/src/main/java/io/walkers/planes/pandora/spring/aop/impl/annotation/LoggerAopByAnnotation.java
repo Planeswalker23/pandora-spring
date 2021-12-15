@@ -1,5 +1,6 @@
 package io.walkers.planes.pandora.spring.aop.impl.annotation;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
@@ -26,8 +27,9 @@ public class LoggerAopByAnnotation {
     }
 
     @Before("@annotation(io.walkers.planes.pandora.spring.aop.impl.annotation.Log)")
-    public void beforeByAnnotation() {
-        System.out.println("被@Log注解标记的方法转有的增强逻辑...before");
+    public void beforeByAnnotation(JoinPoint joinPoint) {
+        String methodName = joinPoint.getSignature().getName();
+        System.out.printf("被@Log注解标记的方法[%s]专有的增强逻辑...before\n", methodName);
     }
 
     @After("pointCut()")

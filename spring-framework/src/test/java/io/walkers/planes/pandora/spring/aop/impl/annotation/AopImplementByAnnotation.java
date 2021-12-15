@@ -34,4 +34,11 @@ public class AopImplementByAnnotation {
         SubtractService subtractService = applicationContext.getBean(SubtractService.class);
         subtractService.annotatedMethod();
     }
+
+    @Test
+    public void invokeMyself() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationAopConfig.class);
+        SubtractService subtractService = applicationContext.getBean(SubtractService.class);
+        subtractService.annotatedMethod2();
+    }
 }

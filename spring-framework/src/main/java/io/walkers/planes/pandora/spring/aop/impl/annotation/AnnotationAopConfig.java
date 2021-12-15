@@ -10,7 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author Planeswalker23
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(exposeProxy = true)
 @ComponentScan("io.walkers.planes.pandora.spring.aop.impl.annotation")
 public class AnnotationAopConfig {
 }
