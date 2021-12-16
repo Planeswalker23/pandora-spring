@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl.annotation;
+package io.walkers.planes.pandora.spring.aop.annotation;
 
 import java.lang.annotation.*;
 

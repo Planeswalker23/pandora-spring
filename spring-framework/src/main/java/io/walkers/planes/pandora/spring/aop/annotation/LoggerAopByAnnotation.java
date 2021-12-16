@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl.annotation;
+package io.walkers.planes.pandora.spring.aop.annotation;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggerAopByAnnotation {
 
-    @Pointcut("execution(public int io.walkers.planes.pandora.spring.aop.impl.annotation.SubtractService.*(..))")
+    @Pointcut("execution(public int io.walkers.planes.pandora.spring.aop.annotation.SubtractService.*(..))")
     public void pointCut() {}
 
     @Before("pointCut()")
@@ -26,7 +26,7 @@ public class LoggerAopByAnnotation {
         System.out.println("增强逻辑...before");
     }
 
-    @Before("@annotation(io.walkers.planes.pandora.spring.aop.impl.annotation.Log)")
+    @Before("@annotation(io.walkers.planes.pandora.spring.aop.annotation.Log)")
     public void beforeByAnnotation(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
         System.out.printf("被@Log注解标记的方法[%s]专有的增强逻辑...before\n", methodName);

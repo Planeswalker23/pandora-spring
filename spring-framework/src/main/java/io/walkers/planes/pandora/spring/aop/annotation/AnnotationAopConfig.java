@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl.annotation;
+package io.walkers.planes.pandora.spring.aop.annotation;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @EnableAspectJAutoProxy(exposeProxy = true)
-@ComponentScan("io.walkers.planes.pandora.spring.aop.impl.annotation")
+@ComponentScan("io.walkers.planes.pandora.spring.aop.annotation")
 public class AnnotationAopConfig {
 }

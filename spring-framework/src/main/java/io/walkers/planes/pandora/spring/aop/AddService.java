@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl;
+package io.walkers.planes.pandora.spring.aop;
 
 /**
  * 自增+1

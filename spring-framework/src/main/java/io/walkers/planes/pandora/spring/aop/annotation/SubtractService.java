@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl.annotation;
+package io.walkers.planes.pandora.spring.aop.annotation;
 
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Component;

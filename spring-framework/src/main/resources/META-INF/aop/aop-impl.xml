@@ -5,17 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="addService" class="io.walkers.planes.pandora.spring.aop.impl.AddService"/>
+    <bean id="addService" class="io.walkers.planes.pandora.spring.aop.AddService"/>
 
-    <bean id="logger" class="io.walkers.planes.pandora.spring.aop.impl.Logger"/>
+    <bean id="logger" class="io.walkers.planes.pandora.spring.aop.Logger"/>
 
     <!-- 配置 AOP 类 -->
     <aop:config>
         <aop:aspect id="logger" ref="logger">
             <aop:before method="before"
-                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.AddService.plusOne(int))"/>
+                        pointcut="execution(public int io.walkers.planes.pandora.spring.aop.AddService.plusOne(int))"/>
             <aop:after method="after"
-                       pointcut="execution(public int io.walkers.planes.pandora.spring.aop.impl.AddService.*(int)))"/>
+                       pointcut="execution(public int io.walkers.planes.pandora.spring.aop.AddService.*(int)))"/>
         </aop:aspect>
     </aop:config>
 

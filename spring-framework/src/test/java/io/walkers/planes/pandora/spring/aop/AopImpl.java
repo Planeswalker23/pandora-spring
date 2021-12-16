@@ -1,4 +1,4 @@
-package io.walkers.planes.pandora.spring.aop.impl;
+package io.walkers.planes.pandora.spring.aop;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class AopImpl {
 
     @Test
     public void byXml() {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/aop/impl/aop-impl.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("META-INF/aop/aop-impl.xml");
         AddService addService = applicationContext.getBean(AddService.class);
         int source = 1;
         int result = addService.plusOne(source);
