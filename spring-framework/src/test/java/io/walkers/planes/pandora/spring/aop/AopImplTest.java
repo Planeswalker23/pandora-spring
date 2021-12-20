@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author Planeswalker23
  */
-public class AopImpl {
+public class AopImplTest {
 
     @Test
     public void byXml() {

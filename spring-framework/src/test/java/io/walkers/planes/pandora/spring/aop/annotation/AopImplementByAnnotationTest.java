@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  *
  * @author Planeswalker23
  */
-public class AopImplementByAnnotation {
+public class AopImplementByAnnotationTest {
 
     @Test
     public void byAnnotation() {
@@ -33,12 +33,5 @@ public class AopImplementByAnnotation {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationAopConfig.class);
         SubtractService subtractService = applicationContext.getBean(SubtractService.class);
         subtractService.annotatedMethod();
-    }
-
-    @Test
-    public void invokeMyself() {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationAopConfig.class);
-        SubtractService subtractService = applicationContext.getBean(SubtractService.class);
-        subtractService.annotatedMethod2();
     }
 }
