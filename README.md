@@ -1,5 +1,5 @@
 ## pandora-spring
-- [ ] Spring IOC
+- Spring IOC
   - [x] Dependency Lookup 依赖查找
   - [x] Dependency Injection 依赖注入
   - [x] Spring Bean 作用域
@@ -11,4 +11,6 @@
   - [x] Resource 资源(properties/xml)
   - [ ] 自动装配(@Enable + @Condition + Spring SPI)
   - [x] Spring 事件
-- [ ] Spring AOP
+- Spring AOP
+  - [x] 基于 XML/注解实现 AOP
+  - [x] AOP 失效场景
