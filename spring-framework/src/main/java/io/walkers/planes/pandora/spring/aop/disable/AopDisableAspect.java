@@ -19,4 +19,10 @@ public class AopDisableAspect {
         String methodName = joinPoint.getSignature().getName();
         System.out.printf("方法[%s]的前置逻辑执行\n", methodName);
     }
+
+    @Before("execution(public void io.walkers.planes.pandora.spring.aop.disable.AopDisableInvokePrivateMethod.*(..))")
+    public void beforeByAnnotation2(JoinPoint joinPoint) {
+        String methodName = joinPoint.getSignature().getName();
+        System.out.printf("方法[%s]的前置逻辑执行\n", methodName);
+    }
 }

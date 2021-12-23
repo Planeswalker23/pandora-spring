@@ -44,4 +44,14 @@ public class AopDisableTest {
         // 因为 Bean 被提前创建，未被代理
         aopDisableLoadBeanAdvanceProcessor.processOne();
     }
+
+    @Test
+    public void invokePrivateMethod() {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationAopConfig.class);
+        AopDisableInvokePrivateMethod aopDisableInvokePrivateMethod = applicationContext.getBean(AopDisableInvokePrivateMethod.class);
+        // expect to output 4 lines, actual is 3 lines
+        // AopDisableProcessor#processOne 的前置逻辑，由于其访问权限为 private 而未执行
+        // org.springframework.aop.support.AopUtils.canApply(org.springframework.aop.Pointcut, java.lang.Class<?>, boolean)
+        aopDisableInvokePrivateMethod.processTwoEnableAopByInjectMyself();
+    }
 }
